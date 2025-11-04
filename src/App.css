@@ -33,12 +33,12 @@ body {
 .navbar-brand h1 {
   font-size: 1.5rem;
   color: #667eea;
-  margin-bottom: 0.25rem;
 }
 
 .powered-by {
   font-size: 0.75rem;
   color: #888;
+  margin: 0.25rem;
 }
 
 .navbar-menu {
@@ -49,7 +49,7 @@ body {
 .navbar-menu a {
   text-decoration: none;
   color: #333;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 8px;
   transition: all 0.3s;
   font-weight: 500;

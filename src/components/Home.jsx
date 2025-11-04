@@ -32,7 +32,7 @@ const Home = () => {
     },
     {
       icon: <MessageCircle size={48} />,
-      title: '규정 관리 QnA',
+      title: '규정 관리 봇',
       description: 'Claude AI와 회계 규정 상담',
       path: '/qna',
       color: '#FFDC3C',
@@ -54,6 +54,9 @@ const Home = () => {
           🤖 AI 기반 예산 관리 시스템
         </h1>
         <p style={{ fontSize: '1.2rem', color: '#666', marginBottom: '1.5rem' }}>
+          {/* <strong>PosPoFiA</strong>는 <strong>Pos</strong>co <strong>Po</strong>cket <strong>Fi</strong>nance <strong>A</strong>I의 약자로 */}
+          <strong>PosPoFiA</strong>는 Posco Pocket Finance AI의 약자로
+          포스코 맞춤형 재무 관리 서비스입니다<br/>
           강화학습과 Claude Sonnet 4로 스마트하게 관리하세요
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

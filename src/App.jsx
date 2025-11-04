@@ -16,7 +16,7 @@ function AppContent() {
     <div className="app">
       <nav className="navbar">
         <div className="navbar-brand">
-          <h1>🤖 AI 예산관리 시스템</h1>
+          <h1>🤖 PosPoFiA</h1>
           <span className="powered-by">Powered by Claude Sonnet 4 & 강화학습</span>
         </div>
         <div className="navbar-menu">
@@ -27,10 +27,13 @@ function AppContent() {
             📊 예산 대시보드
           </Link>
           <Link to="/voucher" className={location.pathname === '/voucher' ? 'active' : ''}>
-            📝 전표 작성
+            📝 전표작성
           </Link>
           <Link to="/anomaly" className={location.pathname === '/anomaly' ? 'active' : ''}>
             🔍 이상탐지
+          </Link>
+          <Link to="/qna" className={location.pathname === '/qna' ? 'active' : ''}>
+            🐻‍❄️ 규정관리봇
           </Link>
         </div>
       </nav>
