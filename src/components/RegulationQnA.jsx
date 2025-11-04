@@ -2,13 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { Send, X, Loader } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5005/api';
+const API_BASE = 'http://localhost:5002/api';
 
 const RegulationQnA = ({ onClose }) => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: '안녕하세요! 예산 및 회계 규정에 대해 무엇이든 물어보세요. 전표 작성, 예산 편성, 세무 처리 등에 대한 가이드를 제공해드립니다.'
+      content: '안녕하세요😊\n우리 회사의 자금규정 및 법인카드에 대해 무엇이든 물어보세요!\n(ex. 전표 작성, 예산 편성, 세무 처리)'
     }
   ]);
   const [input, setInput] = useState('');
@@ -124,7 +124,7 @@ const RegulationQnA = ({ onClose }) => {
         background: '#f7fafc'
       }}>
         {messages.map((message, index) => (
-          <div
+          <div 
             key={index}
             style={{
               marginBottom: '1rem',
@@ -132,19 +132,17 @@ const RegulationQnA = ({ onClose }) => {
               justifyContent: message.role === 'user' ? 'flex-end' : 'flex-start'
             }}
           >
-            <div
-              style={{
-                maxWidth: '80%',
-                padding: '1rem',
-                borderRadius: '12px',
-                background: message.role === 'user' 
-                  ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-                  : 'white',
-                color: message.role === 'user' ? 'white' : '#2d3748',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                whiteSpace: 'pre-wrap',
-                lineHeight: '1.6'
-              }}
+            <div 
+              style={{ 
+                maxWidth: '80%', 
+                padding: '1rem', 
+                borderRadius: '12px', 
+                background: message.role === 'user' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'white',
+                  color: message.role === 'user' ? 'white' : '#2d3748',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)', 
+                  whiteSpace: 'pre-wrap', 
+                  lineHeight: '1.6' 
+              }} 
             >
               {message.content}
             </div>
@@ -168,9 +166,9 @@ const RegulationQnA = ({ onClose }) => {
           background: '#f7fafc'
         }}>
           <div style={{ fontSize: '0.875rem', color: '#718096', marginBottom: '0.5rem' }}>
-            💡 빠른 질문
+            ⚡ 빠른 질문
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             {quickQuestions.map((question, index) => (
               <button
                 key={index}
@@ -178,7 +176,7 @@ const RegulationQnA = ({ onClose }) => {
                   setInput(question);
                 }}
                 style={{
-                  padding: '0.75rem',
+                  padding: '0.6rem',
                   background: 'white',
                   border: '2px solid #e2e8f0',
                   borderRadius: '8px',

@@ -35,7 +35,7 @@ const Home = () => {
       title: '규정 관리 QnA',
       description: 'Claude AI와 회계 규정 상담',
       path: '/qna',
-      color: '#764ba2',
+      color: '#FFDC3C',
       features: ['실시간 AI 상담', '규정 해석', '회계 가이드', '24/7 지원']
     }
   ];
@@ -146,19 +146,6 @@ const Home = () => {
               {item.description}
             </p>
 
-            {item.path === '/qna' && (
-              <div style={{
-                padding: '0.75rem',
-                background: '#f7fafc',
-                borderRadius: '8px',
-                marginBottom: '1rem'
-              }}>
-                <p style={{ fontSize: '0.875rem', color: '#4a5568', margin: 0 }}>
-                  💡 오른쪽 하단의 캐릭터를 클릭하세요!
-                </p>
-              </div>
-            )}
-
             <div style={{ marginTop: '1rem' }}>
               {item.features.map((feature, fIndex) => (
                 <div
@@ -177,6 +164,19 @@ const Home = () => {
                 </div>
               ))}
             </div>
+
+            {item.path === '/qna' && (
+              <div style={{
+                padding: '0.85rem',
+                background: '#FFDC3C',
+                borderRadius: '8px',
+                marginTop: '2rem'
+              }}>
+                <p style={{ fontSize: '0.875rem', color: '#838383ff', textAlign: 'center', fontWeight: 'bold' }}>
+                  우측 하단의 포석호를 눌러주세요 🐻‍❄️
+                </p>
+              </div>
+            )}
 
             {item.path !== '/qna' && (
               <button

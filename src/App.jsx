@@ -50,9 +50,12 @@ function AppContent() {
             <RegulationQnA onClose={() => setShowQnA(false)} />
           </div>
         )}
-      </div>
 
-      <FloatingCharacter onClick={() => setShowQnA(!showQnA)} />
+        {/* showQnA가 false일 때만 플로팅 버튼 보여줌 */}
+        {!showQnA && (
+          <FloatingCharacter onClick={() => setShowQnA(true)} />
+        )}
+      </div>
     </div>
   );
 }
