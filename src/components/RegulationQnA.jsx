@@ -78,18 +78,21 @@ const RegulationQnA = ({ onClose }) => {
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
-      background: 'white'
+      background: 'white',
+      borderLeft: '2.5px solid #e2e8f0',
+      boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+      transition: 'width 0.3s ease',
     }}>
       {/* 헤더 */}
       <div style={{
         padding: '1.5rem',
         borderBottom: '2px solid #e2e8f0',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        color: 'white'
+        background: 'linear-gradient(135deg, #f4d85bff 0%, #fff8b9ff 100%)',
+        color: '#4a4a4aff'
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.25rem' }}>🤖 규정 관리 QnA</h3>
+            <h3 style={{ margin: 0, fontSize: '1.25rem' }}>🐻‍❄️ 규정관리봇</h3>
             <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', opacity: 0.9 }}>
               Claude AI 상담
             </p>
@@ -97,7 +100,7 @@ const RegulationQnA = ({ onClose }) => {
           <button
             onClick={onClose}
             style={{
-              background: 'rgba(255,255,255,0.2)',
+              background: '#8a825333',
               border: 'none',
               borderRadius: '50%',
               width: '36px',
@@ -121,7 +124,7 @@ const RegulationQnA = ({ onClose }) => {
         flex: 1,
         overflowY: 'auto',
         padding: '1.5rem',
-        background: '#f7fafc'
+        background: '#fefdeaff'
       }}>
         {messages.map((message, index) => (
           <div 
@@ -137,8 +140,8 @@ const RegulationQnA = ({ onClose }) => {
                 maxWidth: '80%', 
                 padding: '1rem', 
                 borderRadius: '12px', 
-                background: message.role === 'user' ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'white',
-                  color: message.role === 'user' ? 'white' : '#2d3748',
+                background: message.role === 'user' ? '#f4d85bff' : 'white',
+                  color: message.role === 'user' ? '#000' : '#2d3748',
                   boxShadow: '0 2px 4px rgba(0,0,0,0.1)', 
                   whiteSpace: 'pre-wrap', 
                   lineHeight: '1.6' 
@@ -150,7 +153,7 @@ const RegulationQnA = ({ onClose }) => {
         ))}
 
         {loading && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#667eea' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#dbb405ff' }}>
             <Loader size={20} className="spinner" />
             <span>AI가 생각하는 중...</span>
           </div>
@@ -162,11 +165,14 @@ const RegulationQnA = ({ onClose }) => {
       {/* 빠른 질문 */}
       {messages.length === 1 && (
         <div style={{
-          padding: '0 1.5rem 1rem 1.5rem',
-          background: '#f7fafc'
+          margin: '0rem 0.5rem',
+          padding: '0.5rem 1rem 0.5rem 1rem',
+          background: '#fdf7c4ff',
+          borderTopLeftRadius: '15px',
+          borderTopRightRadius: '15px'
         }}>
-          <div style={{ fontSize: '0.875rem', color: '#718096', marginBottom: '0.5rem' }}>
-            ⚡ 빠른 질문
+          <div style={{ fontSize: '0.9rem', color: '#000000', marginBottom: '0.5rem' }}>
+            🏃‍♂️‍➡️ 빠른 질문
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             {quickQuestions.map((question, index) => (
@@ -176,18 +182,19 @@ const RegulationQnA = ({ onClose }) => {
                   setInput(question);
                 }}
                 style={{
-                  padding: '0.6rem',
+                  padding: '0.55rem',
                   background: 'white',
-                  border: '2px solid #e2e8f0',
+                  border: 'px solid #e2e8f0',
                   borderRadius: '8px',
                   textAlign: 'left',
                   cursor: 'pointer',
                   fontSize: '0.875rem',
-                  transition: 'all 0.3s'
+                  transition: 'all 0.3s',
+                  color: '#4c4c4cff'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#667eea';
-                  e.currentTarget.style.background = '#f0f4ff';
+                  e.currentTarget.style.borderColor = '#f4d85bff';
+                  e.currentTarget.style.background = '#fffdecff';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#e2e8f0';
@@ -230,7 +237,7 @@ const RegulationQnA = ({ onClose }) => {
             disabled={loading || !input.trim()}
             style={{
               padding: '0.75rem 1.5rem',
-              background: loading || !input.trim() ? '#cbd5e0' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: loading || !input.trim() ? '#cbd5e0' : '#f4d85bff',
               color: 'white',
               border: 'none',
               borderRadius: '8px',

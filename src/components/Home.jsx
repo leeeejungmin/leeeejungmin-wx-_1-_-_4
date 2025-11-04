@@ -16,7 +16,7 @@ const Home = () => {
     },
     {
       icon: <FileText size={48} />,
-      title: '전표 작성',
+      title: '전표작성',
       description: 'AI 자동 전표 작성 및 증빙 검증',
       path: '/voucher',
       color: '#48bb78',
@@ -32,10 +32,10 @@ const Home = () => {
     },
     {
       icon: <MessageCircle size={48} />,
-      title: '규정 관리 봇',
+      title: '규정관리봇',
       description: 'Claude AI와 회계 규정 상담',
       path: '/qna',
-      color: '#FFDC3C',
+      color: '#f4d85bff',
       features: ['실시간 AI 상담', '규정 해석', '회계 가이드', '24/7 지원']
     }
   ];
@@ -171,11 +171,11 @@ const Home = () => {
             {item.path === '/qna' && (
               <div style={{
                 padding: '0.85rem',
-                background: '#FFDC3C',
+                background: '#f4d85bff',
                 borderRadius: '8px',
                 marginTop: '2rem'
               }}>
-                <p style={{ fontSize: '0.875rem', color: '#838383ff', textAlign: 'center', fontWeight: 'bold' }}>
+                <p style={{ fontSize: '0.875rem', color: '#6b6b6bff', textAlign: 'center', }}>
                   우측 하단의 포석호를 눌러주세요 🐻‍❄️
                 </p>
               </div>

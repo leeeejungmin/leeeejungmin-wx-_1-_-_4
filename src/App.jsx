@@ -5,6 +5,7 @@ import BudgetDashboard from './components/BudgetDashboard';
 import VoucherEntry from './components/VoucherEntry';
 import AnomalyDetection from './components/AnomalyDetection';
 import RegulationQnA from './components/RegulationQnA';
+import RegulationQnAFull from './components/RegulationQnAFull';
 import FloatingCharacter from './components/FloatingCharacter';
 import './App.css';
 
@@ -45,15 +46,17 @@ function AppContent() {
             <Route path="/budget" element={<BudgetDashboard />} />
             <Route path="/voucher" element={<VoucherEntry />} />
             <Route path="/anomaly" element={<AnomalyDetection />} />
+            <Route path="/qna" element={<RegulationQnAFull />} />
           </Routes>
         </div>
 
+        {/* 플로팅 버튼 클릭 → 사이드뷰 */}
         {showQnA && (
           <div className="sidebar-panel">
-            <RegulationQnA onClose={() => setShowQnA(false)} />
+            <RegulationQnA onClose={() => setShowQnA(false)} /> 
           </div>
         )}
-
+        
         {/* showQnA가 false일 때만 플로팅 버튼 보여줌 */}
         {!showQnA && (
           <FloatingCharacter onClick={() => setShowQnA(true)} />
