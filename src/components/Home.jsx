@@ -32,11 +32,11 @@ const Home = () => {
     },
     {
       icon: <MessageCircle size={48} />,
-      title: '규정관리봇',
+      title: '포돈이',
       description: 'Claude AI와 회계 규정 상담',
       path: '/qna',
       color: '#f4d85bff',
-      features: ['실시간 AI 상담', '규정 해석', '회계 가이드', '24/7 지원']
+      features: ['실시간 AI 상담', '규정 해석', '회계 가이드', '사이드뷰 제공']
     }
   ];
 
@@ -98,12 +98,12 @@ const Home = () => {
         {menuItems.map((item, index) => (
           <div
             key={index}
-            onClick={() => item.path !== '/qna' && navigate(item.path)}
+            onClick={() => navigate(item.path)}
             style={{
               background: 'white',
               borderRadius: '16px',
               padding: '2rem',
-              cursor: item.path !== '/qna' ? 'pointer' : 'default',
+              cursor: 'pointer',
               transition: 'all 0.3s',
               boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
               borderTop: `4px solid ${item.color}`,
@@ -111,16 +111,12 @@ const Home = () => {
               overflow: 'hidden'
             }}
             onMouseEnter={(e) => {
-              if (item.path !== '/qna') {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.15)';
-              }
+              e.currentTarget.style.transform = 'translateY(-8px)';
+              e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.15)';
             }}
             onMouseLeave={(e) => {
-              if (item.path !== '/qna') {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-              }
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
             }}
           >
             <div style={{
@@ -168,20 +164,7 @@ const Home = () => {
               ))}
             </div>
 
-            {item.path === '/qna' && (
-              <div style={{
-                padding: '0.85rem',
-                background: '#f4d85bff',
-                borderRadius: '8px',
-                marginTop: '2rem'
-              }}>
-                <p style={{ fontSize: '0.875rem', color: '#6b6b6bff', textAlign: 'center', }}>
-                  우측 하단의 포석호를 눌러주세요 🐻‍❄️
-                </p>
-              </div>
-            )}
-
-            {item.path !== '/qna' && (
+            {(
               <button
                 className="btn btn-primary"
                 style={{

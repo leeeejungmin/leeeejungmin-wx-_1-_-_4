@@ -50,7 +50,7 @@ const RegulationQnA = ({ onClose }) => {
         ...prev,
         {
           role: 'assistant',
-          content: '죄송합니다. 응답 생성 중 오류가 발생했습니다. 다시 시도해주세요.'
+          content: '서버와 통신 중 오류가 발생했습니다. 담당자에게 문의해주세요.'
         }
       ]);
     }
@@ -92,9 +92,9 @@ const RegulationQnA = ({ onClose }) => {
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h3 style={{ margin: 0, fontSize: '1.25rem' }}>🐻‍❄️ 규정관리봇</h3>
+            <h3 style={{ margin: 0, fontSize: '1.25rem' }}>🐻‍❄️ 포돈이</h3>
             <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', opacity: 0.9 }}>
-              Claude AI 상담
+              Claude AI를 사용한 회계 규정 상담 도우미입니다.
             </p>
           </div>
           <button
@@ -111,8 +111,8 @@ const RegulationQnA = ({ onClose }) => {
               cursor: 'pointer',
               transition: 'all 0.3s'
             }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.3)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(114, 80, 80, 0.3)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = '#8a825333'}
           >
             <X size={20} color="white" />
           </button>
@@ -123,14 +123,14 @@ const RegulationQnA = ({ onClose }) => {
       <div style={{
         flex: 1,
         overflowY: 'auto',
-        padding: '1.5rem',
-        background: '#fefdeaff'
+        padding: '1.2rem',
+        background: '#fcfbf4ff'
       }}>
         {messages.map((message, index) => (
           <div 
             key={index}
             style={{
-              marginBottom: '1rem',
+              marginBottom: '1.3rem',
               display: 'flex',
               justifyContent: message.role === 'user' ? 'flex-end' : 'flex-start'
             }}
@@ -138,7 +138,7 @@ const RegulationQnA = ({ onClose }) => {
             <div 
               style={{ 
                 maxWidth: '80%', 
-                padding: '1rem', 
+                padding: '0.7rem 1rem', 
                 borderRadius: '12px', 
                 background: message.role === 'user' ? '#f4d85bff' : 'white',
                   color: message.role === 'user' ? '#000' : '#2d3748',
@@ -158,7 +158,6 @@ const RegulationQnA = ({ onClose }) => {
             <span>AI가 생각하는 중...</span>
           </div>
         )}
-
         <div ref={messagesEndRef} />
       </div>
 
@@ -167,7 +166,7 @@ const RegulationQnA = ({ onClose }) => {
         <div style={{
           margin: '0rem 0.5rem',
           padding: '0.5rem 1rem 0.5rem 1rem',
-          background: '#fdf7c4ff',
+          background: '#f5f2dbff',
           borderTopLeftRadius: '15px',
           borderTopRightRadius: '15px'
         }}>
@@ -193,7 +192,7 @@ const RegulationQnA = ({ onClose }) => {
                   color: '#4c4c4cff'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#f4d85bff';
+                  e.currentTarget.style.borderColor = '#ebe5c2ff';
                   e.currentTarget.style.background = '#fffdecff';
                 }}
                 onMouseLeave={(e) => {

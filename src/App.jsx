@@ -17,7 +17,9 @@ function AppContent() {
     <div className="app">
       <nav className="navbar">
         <div className="navbar-brand">
-          <h1>🤖 PosPoFiA</h1>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''} style={{ textDecoration: 'none', color: 'inherit'}}>
+            <h1>🤖 PosPoFiA</h1>
+          </Link>
           <span className="powered-by">Powered by Claude Sonnet 4 & 강화학습</span>
         </div>
         <div className="navbar-menu">
@@ -34,7 +36,7 @@ function AppContent() {
             🔍 이상탐지
           </Link>
           <Link to="/qna" className={location.pathname === '/qna' ? 'active' : ''}>
-            🐻‍❄️ 규정관리봇
+            🐻‍❄️ 포돈이
           </Link>
         </div>
       </nav>

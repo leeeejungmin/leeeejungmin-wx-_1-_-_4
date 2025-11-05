@@ -38,7 +38,7 @@ const FloatingCharacter = ({ onClick }) => {
             <X size={16} />
           </button>
           <div style={{ fontSize: '0.875rem', color: '#4a5568', marginBottom: '0.5rem' }}>
-            <strong>💬 규정관리봇</strong>
+            <strong>💬 포돈이</strong>
           </div>
           <div style={{ fontSize: '0.8rem', color: '#718096' }}>
             클릭하면 회계 규정 및 예산 관련 질문을 할 수 있어요!
